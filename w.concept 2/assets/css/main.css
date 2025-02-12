@@ -1,0 +1,800 @@
+
+
+
+/* 공통 */
+.prd-list{}
+.prd-list .prd-item{}
+.prd-list .thumb{}
+.prd-list .thumb img{ width: 100%;}
+.prd-list .info{padding: 10px 8px 0px 2px;}
+.prd-list .info .brand{ font-size: 13px; line-height: 15px; height: 15px;}
+.prd-list .info .title{ margin-top: 6px; font-size: 13px; line-height: 17px; max-height: 34px; color: rgb(123, 123, 123);}
+.prd-list .price{ margin-top: 6px; line-height: 16px; display: flex; align-items: center;}
+.prd-list .price em{ margin-left: 4px;}
+.prd-list .price .curr{ font-size: 15px; font-weight: 500; color: rgb(0, 0, 0);}
+.prd-list .price .sale{ font-size: 13px; font-weight: 500; color: rgb(250, 85, 0);}
+
+.banner-list .title{ font-size: 16px; line-height: 19px; height: 19px; color: rgb(0, 0, 0);}
+.banner-list .sub{ margin-top: 4px; line-height: 17px; font-size: 14px; color: rgb(123, 123, 123); display: block;}
+
+/* 공통 레이아웃 */
+.prd-list.grid2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5px;
+}
+.prd-list.grid3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px 4px;
+}
+
+/* 공통 페이지네이션 */
+.swiper-pagination-bullet{
+    width: 6px;
+    height: 6px;
+}
+.swiper-pagination-bullet-active{
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+/* header공통 */
+.prd-header .head{
+    display: flex;
+    /* 아이템들이 한 줄에 모두 들어가지 않으면 자동으로 다음 줄로 이동 */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 0px 16px;
+}
+.prd-header .headline{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+.prd-header .link-more{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.prd-header .link-more svg{
+    width: 6px;
+}
+.prd-header .sub{
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 8px;
+    color: rgb(157, 157, 157);
+    /* 한칸을 다 차지하라는 코드 */
+    flex-basis: 100%;
+}
+
+/* tab공통 - type1 */
+.prd-tab{}
+.prd-tab.type1{
+    /* .swiper에 기본값으로 들어가있는 overflow:hidden;을 뻬줘야
+       짤리지않고 이어짐 */
+    overflow: visible;
+}
+.prd-tab.type1 .swiper-slide{
+    /* 기본값으로 들어가있는 width:100%;를 빼줌 */
+    width: auto;
+}
+.prd-tab.type1 .swiper-slide a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 33px;
+    font-size: 14px;
+    padding: 0px 14px;
+    border-radius: 33px;
+    color: rgb(157, 157, 157);
+    background-color: rgb(245, 245, 245);
+}
+.prd-tab.type1 .swiper-slide a.on{
+    background: #000;
+    color: #fff;
+}
+
+/* tab공통 - type2 */
+.prd-tab.type2{
+    overflow: visible;
+    border-bottom: 1px solid #ccc;
+}
+.prd-tab.type2 .swiper-slide{
+    width: auto;
+}
+.prd-tab.type2 .swiper-slide a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 42px;
+
+}
+.prd-tab.type2 .swiper-slide a.on::after{
+    position: absolute;
+    /* 겹치게 하기 위해 -1px 줌 */
+    bottom: -1px; left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: rgb(0, 0, 0);
+}
+
+
+/* slide공통 */
+/* 스크롤 넘치게 할 수 있는 코드 */
+.prd-slide{
+    overflow: visible;
+}
+
+
+/* cont공통 */
+/* 나머지는 안보이게 */
+.prd-cont .cont{
+    display: none;
+}
+/* on 인것만 보이게 */
+.prd-cont .cont.on{
+    display: block;
+}
+
+.sc-category.cate1 .swiper{
+    padding-bottom: 16px;
+}
+.sc-category.cate2 .prd-cont{
+    padding-top: 24px;
+}
+
+
+
+
+
+/* sc-visual */
+.sc-visual .swiper img{
+    width: 100%;
+}
+.sc-visual .swiper .text-area{
+    position: absolute;
+    padding: 60px 40px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 41%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.sc-visual .swiper .text-area .title{
+    font-size: 28px;
+    line-height: 34px;
+    margin-top: 8px;
+}
+.sc-visual .swiper .text-area .sub{
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 8px;
+}
+
+
+/* 슬라이드보다 위에 있어야 눈에 보임 */
+.sc-visual .control{
+    width: 63px;
+    height: 26px;
+    
+    display: flex;
+    padding: 10px;
+    gap: 4px;
+    position: absolute;
+    bottom: 20px;right: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    z-index: 1;
+}
+.sc-visual .control svg{
+    width: 5px;
+    height: 11px;
+    margin-left: 2px;
+}
+/* pagination에는 width: 100%; 의 크기가 기본적으로 들어가있기때문에 
+   width: auto;로 width: 100%; 를 빼준다 */
+.sc-visual .control .swiper-pagination{
+    position: relative;
+    /* bottom 값도 기본적으로 들어가있기때문에 bottom: auto;로 빼준다  */
+    bottom: auto;
+    width: auto;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 4px;
+    color: rgb(255, 255, 255);
+}
+.sc-visual .event{
+    height: 45px;
+    background-color: rgb(0, 0, 0);
+    padding: 0px 16px 0px 20px;
+    
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+}
+.sc-visual .event img{
+    width: 26px;
+    height: 26px;
+    margin-right: 6px;
+}
+.sc-visual .event .text{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+.sc-visual .event .sale{
+    color: rgb(250, 85, 0);
+    font-size: 14px;
+}
+
+
+
+
+
+/* sc-quick-menu */
+.sc-quick-menu{
+    padding-bottom: 70px;
+    margin-top: 24px;
+}
+.sc-quick-menu .quick-list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 24px 16px;
+    text-align: center;
+}
+.sc-quick-menu .quick-list a{
+    display: block;
+    width: 100%;
+}
+.sc-quick-menu .quick-list .btn-menu img{
+    width: 100%;
+}
+.sc-quick-menu .quick-item .text{
+    display: block;
+    margin-top: 8px;
+    line-height: 16px;
+    min-width: 60px;
+}
+
+
+
+
+
+/* sc-for-you */
+.sc-for-you{
+    padding-bottom: 70px;
+}
+.sc-for-you .swiper{
+    padding-bottom: 50px;
+}
+
+
+
+
+
+/* sc-focus */
+.sc-focus{
+    padding-bottom: 70px;
+}
+.sc-focus .focus-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0px 5px;
+}
+.sc-focus .focus-list img{
+    width: 100%;
+}
+.sc-focus .focus-list .info{
+    display: block;
+    padding: 10px 8px 0px 2px;
+}
+.sc-focus .info .title{
+    font-size: 16px;
+    line-height: 19px;
+    height: 19px;
+}
+.sc-focus .info .sub{
+    display: block;
+    line-height: 18px;
+    margin-top: 6px;
+    color: rgb(123, 123, 123);
+}
+
+
+
+
+
+/* sc-category */
+.sc-category{
+    padding-bottom: 70px;
+}
+.sc-category .title-area{
+    padding-bottom: 16px;
+}
+.sc-category .title-area .title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.sc-category .title-area .more{
+    font-size: 12px;
+    line-height: 18px;
+}
+.sc-category .title-area svg{
+    width: 6px;
+    height: 18px;
+    margin-left: 4px;
+}
+.sc-category .title-area .sub{
+    margin-top: 8px;
+    line-height: 16px;
+    color: rgb(157, 157, 157);
+}
+
+/* 슬라이드 */
+.sc-category .swiper-wrapper{
+    position: relative;
+    display: flex;
+    /* flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: auto hidden;
+    overscroll-behavior: contain auto;
+    row-gap: 10px; */
+}
+
+
+
+
+
+/* sc-rising */
+.sc-rising{
+    padding-bottom: 70px;
+}
+.sc-rising .info .title{
+    font-size: 16px;
+    line-height: 19px;
+    height: 19px;
+    color: rgb(0, 0, 0);
+}
+.sc-rising .info .sub{
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 6px;
+    color: rgb(123, 123, 123);
+}
+
+
+
+
+
+/* sc-shopping-bag */
+.sc-shopping-bag{
+    padding-bottom: 70px;
+}
+.sc-shopping-bag .control{
+    padding-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sc-shopping-bag .control .btn-more{
+    width: 250px;
+    height: 42px;
+    font-size: 14px;
+    border-radius: 42px;
+    border: 1px solid rgb(233, 233, 233);
+}
+
+
+
+
+
+/* sc-how-about */
+.sc-how-about{
+    padding-bottom: 70px;
+}
+.sc-how-about .ad{
+    border: 1px solid rgb(217, 217, 217);
+    color: rgb(123, 123, 123);
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0px 5px;
+}
+
+
+
+
+
+/* sc-pick */
+.sc-pick{
+    padding-bottom: 70px;
+}
+.sc-pick .prd-cont{
+    padding-top: 24px;
+}
+
+
+
+
+
+/* sc-best-brands */
+.sc-best-brands{
+    padding-bottom: 70px;
+}
+.sc-best-brands .info .title{
+    font-size: 16px;
+    line-height: 19px;
+    height: 19px;
+    color: rgb(0, 0, 0);
+}
+.sc-best-brands .info .sub{
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 6px;
+    color: rgb(123, 123, 123);
+}
+
+
+
+
+
+/* sc-texture */
+.sc-texture{
+    padding-bottom: 70px;
+}
+
+
+
+
+
+/* sc-new-collect */
+.sc-new-collect{
+    padding-bottom: 70px;
+}
+.sc-new-collect .info .title{
+    font-size: 16px;
+    line-height: 19px;
+    height: 19px;
+    color: rgb(0, 0, 0);
+}
+.sc-new-collect .info .sub{
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 6px;
+    color: rgb(123, 123, 123);
+}
+
+
+
+
+
+/* sc-special */
+.sc-special{
+    padding-bottom: 70px;
+}
+.sc-special .swiper{
+    /* 짤리지않게 넘치도록 */
+    overflow: visible;
+    margin-top: 8px;
+}
+.sc-special .swiper-slide{
+    transform: scale(0.9);
+    transition: .3s;
+}
+/* 커야하는 가운데 원본 */
+.sc-special .swiper-slide-active{
+    transform: scale(1);
+}
+.sc-special .prd-list .price{
+    margin-top: 12px;
+}
+.sc-special .prd-list .thumb{
+    position: relative;
+}
+.sc-special .prd-list .dc{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    display: block;
+    border-radius: 100%;
+    background-color: rgb(250, 85, 0);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+}
+
+
+
+
+
+/* sc-style-for */
+.sc-style-for{
+    padding-bottom: 70px;
+}
+.sc-style-for .swiper{
+    padding-bottom: 50px;
+}
+
+
+
+
+
+/* sc-wdna */
+.sc-wdna{
+    padding-bottom: 70px;
+}
+.sc-wdna .swiper .prd-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+}
+.sc-wdna .prd-item{
+    position: relative;
+}
+.sc-wdna .prd-item .thumb{
+    width: 100%;
+    height: 100%;
+}
+.sc-wdna .prd-item .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 각 슬라이드마다 이미지 비율이 다를때 aspect-ratio로 맞춰줌 */
+    aspect-ratio: 1 / 1.3;
+}
+.sc-wdna .info{
+    position: absolute;
+    left: 0;
+    padding: 7px 8px 9px;
+    width: 100%;
+    min-height: 30px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgb(255, 255, 255);
+}
+.sc-wdna .swiper{
+    padding-bottom: 50px;
+}
+
+
+
+
+
+/* sc-exclusive */
+.sc-exclusive{
+    padding-bottom: 70px;
+}
+.sc-exclusive .intro{
+    position: relative;
+}
+.sc-exclusive .intro .info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.sc-exclusive .intro .info .title{
+    font-size: 20px;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+}
+.sc-exclusive .intro .info .sub{
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 8px;
+    color: rgb(255, 255, 255);
+}
+.sc-exclusive .bottom-area{
+    margin-left: 5.33333vw;
+    margin-top: -28.49%;
+    position: relative;
+    padding: 3.2vw 3.2vw 0vw;
+    background: #fff;
+}
+.sc-exclusive .bottom-area .prd-item+.prd-item{
+    margin-top: 4vw;
+}
+.sc-exclusive .bottom-area .prd-item a{
+    display: flex;
+    align-items: flex-start;
+}
+.sc-exclusive .bottom-area .thumb{
+    width: 21.282%;
+}
+.sc-exclusive .bottom-area .info{
+    flex: 1;
+    padding: 0px 0px 0px 12px;
+}
+.sc-exclusive .bottom-area .info .title{
+    display: block;
+    margin-top: 6px;
+}
+.sc-exclusive .bottom-area .info .price{
+    margin-top: 12px;
+}
+
+
+
+
+/* sc-bestitem */
+.prd-list.row .prd-item a{
+    display: flex;
+    padding-bottom: 10px;
+}
+.prd-list.row .prd-item .thumb{
+    width: 32.435%;
+}
+.prd-list.row .prd-item .thumb img{
+    width: 100%;
+}
+.prd-list.row .prd-item .info{
+    flex: 1;
+    padding: 0px 0px 0px 12px;
+}
+.sc-category.cate2 .control{
+    padding-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sc-category.cate2 .control .btn-more{
+    width: 250px;
+    height: 42px;
+    font-size: 14px;
+    border-radius: 42px;
+    border: 1px solid rgb(233, 233, 233);
+}
+
+
+
+
+
+/* sc-theme */
+.sc-theme{
+    padding-bottom: 70px;
+}
+.sc-theme .banner-item{
+    display: flex;
+}
+.sc-theme .banner-item .thumb img{
+    width: 100%;
+}
+.sc-theme .banner-item a{
+    display: block;
+    width: 100%;
+}
+.sc-theme .banner-item .info{
+    padding: 18px 0 18px 0;
+}
+
+
+
+
+
+/* fix-btn */
+/* .fix-btn{
+    position: relative;
+    position: fixed;
+    bottom: 66px;
+    left: 20px;
+    z-index: 100;
+    opacity: 0;
+    transition: bottom 0.3s;
+}
+.fix-btn img{
+    width: 80px;
+    height: 80px;
+}
+.fix-btn.show{
+    opacity: 1;
+    visibility: visible;
+}
+.fix-btn .close{
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    width: 16px;
+    height: 16px;
+} */
+
+
+
+/* pop-up */
+.pop-up{
+    position: fixed;
+    bottom: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    /* overflow-y: auto; */
+}
+.pop-up .slide-all{
+    position: absolute;
+    width: 100%;
+    bottom: 0;left: 0;
+}
+.pop-up .slide-all .pop-slide{
+    border-radius: 20px 20px 0px 0px;
+}
+.pop-up .slide-all img{
+    width: 100%;
+}
+.pop-up .btn-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin-top: -1px;
+}
+.pop-up .btn-area .btn-today{
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0px 20px;
+    height: 50px;
+    color: rgb(119, 119, 119);
+}
+.pop-up .btn-area .btn-close{
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0px 20px;
+    height: 50px;
+}
+
+/* 슬라이드보다 위에 있어야 눈에 보임 */
+.pop-up .control{
+    width: 40px;
+    height: 26px;
+    
+    display: flex;
+    padding: 5px 10px;
+    position: absolute;
+    top: 12px; right: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    z-index: 1;
+}
+/* pagination에는 width: 100%; 의 크기가 기본적으로 들어가있기때문에 
+   width: auto;로 width: 100%; 를 빼준다 */
+   .pop-up .control .swiper-pagination{
+    position: relative;
+    /* bottom 값도 기본적으로 들어가있기때문에 bottom: auto;로 빼준다  */
+    bottom: auto;
+    width: auto;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+

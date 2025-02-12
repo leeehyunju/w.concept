@@ -1,0 +1,175 @@
+@import'./reset.css';
+@import'./common.css';
+@import'./font.css';
+
+
+
+/* 큰틀 */
+/* 계속 줄어들지않도록 보장하는 최소 width값 */
+
+.inner{
+    padding: 0 20px 0 20px;
+    overflow: hidden;
+}
+
+
+
+
+
+/* header */
+#header{
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+#header .group-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 14px 0px 10px;
+}
+#header .group-top h1{
+    width: 195px;
+    height: 50px;
+}
+#header .group-top .btn-search{
+    width: 32px;
+    height: 32px;
+    
+}
+#header .group-top .btn-cart{
+    width: 32px;
+    height: 32px;
+}
+#header .icon-area button{
+    margin-left: 8px;
+}
+
+
+/* 슬라이드 메뉴 */
+#header .group-bottom{
+    height: 45px;
+    padding: 0px 20px;
+    background: #f00;
+}
+#header .group-bottom .swiper-wrapper{
+    display: flex;
+}
+
+
+
+/* gnb 메뉴 */
+.gnb{
+    position: sticky;
+    top: 0;
+    height: 45px;
+    background: #fff;
+    z-index: 10;
+}
+.gnb .swiper{
+    height: 100%;
+}
+/* width: auto;를 주면, 자기 크기만큼 나타남 */
+.gnb .swiper-slide{
+    width: auto;
+    padding: 0 9px;
+}
+/* 클릭하는 범위가 넓어야하기때문에 a에 height: 100%;을 적용함 */
+.gnb .swiper-slide a{
+    /* position: relative;를 기준으로 on이 있는 애들만 적용됨 */
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 700;
+}
+.gnb .swiper-slide .point{
+    color: rgb(219, 32, 135);
+}
+/* gnb 메뉴 _ 선만들기 */
+.gnb .swiper-slide a.on::after{
+    position: absolute;
+    bottom: 0;left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    content: '';
+}
+
+
+
+
+
+
+/* footer */
+#footer{
+    margin-top: 10px;
+    padding-bottom: 120px;
+}
+#footer .nav-list{
+    background: rgb(157, 157, 157);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+#footer .nav-item{
+    position: relative;
+    display: block;
+    flex: 1;
+    text-align: center;
+}
+#footer .nav-item+.nav-item::before{
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+}
+#footer .nav-item a{
+    font-size: 14px;
+    line-height: 16px;
+    color: rgb(255, 255, 255);
+}
+#footer .address{
+    font-weight: 400;
+    padding: 20px 15px 34px 20px;
+}
+#footer .addr{
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(123, 123, 123);
+}
+#footer .addr .link{
+    text-decoration: underline;
+}
+#footer .nav-terms{
+    font-size: 12px;
+    margin: 16px 0px;
+    display: flex;
+    align-items: center;
+}
+#footer .nav-terms strong{
+    font-weight: bold;
+}
+#footer .nav-terms li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#footer .nav-terms li+li::before{
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: rgb(204, 204, 204);
+    margin: 0 10px;
+}
+#footer .copy{
+    font-size: 11px;
+    color: rgb(123, 123, 123);
+}
